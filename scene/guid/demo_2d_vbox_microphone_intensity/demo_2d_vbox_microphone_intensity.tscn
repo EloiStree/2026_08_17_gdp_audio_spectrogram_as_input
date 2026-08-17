@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://cytiejph674qn"]
+
+[ext_resource type="Script" uid="uid://bdoiqxqy3r1ps" path="res://addons/2026_08_17_gdp_audio_spectrogram_as_input/scene/guid/demo_2d_vbox_microphone_intensity/audio_in_listen_to_audio_intensity.gd" id="1_4u4ds"]
+
+[node name="Demo2dVboxMicrophoneIntensity" type="Control" unique_id=1016588612]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Node" type="Node" parent="." unique_id=1635037980]
+
+[node name="AudioInListenToAudioIntensity" type="Node" parent="Node" unique_id=1698435439 node_paths=PackedStringArray("_audio_stream")]
+script = ExtResource("1_4u4ds")
+_audio_stream = NodePath("AudioStreamPlayer")
+_microphone_priority = Array[String](["Microphone (3- USB Audio)", "Microphone (USB Audio)"])
+metadata/_custom_type_script = "uid://bdoiqxqy3r1ps"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Node/AudioInListenToAudioIntensity" unique_id=1157457467]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1003903883]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer" unique_id=1787173625]
+layout_mode = 2
+size_flags_vertical = 2
+max_value = 1.0
+step = 0.001
+
+[connection signal="on_percent_intensity_updated" from="Node/AudioInListenToAudioIntensity" to="VBoxContainer/HSlider" method="set_value"]

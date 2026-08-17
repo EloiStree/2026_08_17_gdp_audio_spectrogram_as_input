@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://dhe3aquetluij"]
+
+[ext_resource type="Script" uid="uid://s7nlhpjfks4j" path="res://addons/2026_08_17_gdp_audio_spectrogram_as_input/scene/guid/demo_2d_vbox_microphone_intensity/audio_in_listen_to_audio_spectrogram_array.gd" id="1_3k4ih"]
+[ext_resource type="Script" uid="uid://xcqqyun4pyd7" path="res://addons/2026_08_17_gdp_audio_spectrogram_as_input/scene/guid/demo_2d_vbox_microphone_hello_spectrogram/audio_in_ascii_spectrogram_experiment.gd" id="2_cokuc"]
+
+[node name="Demo2dVboxMicrophoneIntensity" type="Control" unique_id=1016588612]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Demo2dVboxMicrophoneIntensity" type="Control" parent="." unique_id=1760933409]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Node" type="Node" parent="Demo2dVboxMicrophoneIntensity" unique_id=1635037980]
+
+[node name="AudioInListenToAudioToBuildSpectrogramArray" type="Node" parent="Demo2dVboxMicrophoneIntensity/Node" unique_id=1297452709 node_paths=PackedStringArray("_audio_stream")]
+script = ExtResource("1_3k4ih")
+_audio_stream = NodePath("AudioStreamPlayer")
+_microphone_priority = Array[String](["Microphone (3- USB Audio)"])
+
+[node name="AudioInAsciiSpectrogramExperiment" type="Node" parent="Demo2dVboxMicrophoneIntensity/Node/AudioInListenToAudioToBuildSpectrogramArray" unique_id=890935412]
+script = ExtResource("2_cokuc")
+metadata/_custom_type_script = "uid://xcqqyun4pyd7"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Demo2dVboxMicrophoneIntensity/Node/AudioInListenToAudioToBuildSpectrogramArray" unique_id=1483067444]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Demo2dVboxMicrophoneIntensity" unique_id=1003903883]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSlider" type="HSlider" parent="Demo2dVboxMicrophoneIntensity/VBoxContainer" unique_id=1787173625]
+layout_mode = 2
+size_flags_vertical = 2
+max_value = 1.0
+step = 0.001
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Demo2dVboxMicrophoneIntensity/VBoxContainer" unique_id=1663964234]
+layout_mode = 2
+size_flags_vertical = 3
+
+[connection signal="on_spectrogram_column_updated" from="Demo2dVboxMicrophoneIntensity/Node/AudioInListenToAudioToBuildSpectrogramArray" to="Demo2dVboxMicrophoneIntensity/Node/AudioInListenToAudioToBuildSpectrogramArray/AudioInAsciiSpectrogramExperiment" method="on_spectrogram_column_updated"]
+[connection signal="on_spectrogram_as_text_updated" from="Demo2dVboxMicrophoneIntensity/Node/AudioInListenToAudioToBuildSpectrogramArray/AudioInAsciiSpectrogramExperiment" to="Demo2dVboxMicrophoneIntensity/VBoxContainer/RichTextLabel" method="set_text"]
