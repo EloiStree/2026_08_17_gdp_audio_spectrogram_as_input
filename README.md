@@ -1,3 +1,11 @@
+```
+git submodule add https://github.com/EloiStree/2026_08_17_gdp_audio_spectrogram_as_input.git addons/2026_08_17_gdp_audio_spectrogram_as_input
+```
+
+```
+git clone add https://github.com/EloiStree/2026_08_17_gdp_audio_spectrogram_as_input.git addons/2026_08_17_gdp_audio_spectrogram_as_input
+```
+
 # 2026_08_17_gdp_audio_spectrogram_as_input
 
 > I dream of being able to trigger actions based on the spectrogram state. Allowing macro beat boxing.
