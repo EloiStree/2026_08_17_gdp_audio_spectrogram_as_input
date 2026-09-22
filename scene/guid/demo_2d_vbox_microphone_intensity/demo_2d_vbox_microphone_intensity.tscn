@@ -15,7 +15,7 @@ grow_vertical = 2
 [node name="AudioInListenToAudioIntensity" type="Node" parent="Node" unique_id=1698435439 node_paths=PackedStringArray("_audio_stream")]
 script = ExtResource("1_4u4ds")
 _audio_stream = NodePath("AudioStreamPlayer")
-_microphone_priority = Array[String](["Microphone (3- USB Audio)", "Microphone (USB Audio)"])
+_microphone_priority = Array[String](["Digital Audio Interface", "Digital Audio Interface (2- MiraBox Audio Capture)", "Microphone (3- USB Audio)", "Microphone (USB Audio)"])
 metadata/_custom_type_script = "uid://bdoiqxqy3r1ps"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Node/AudioInListenToAudioIntensity" unique_id=1157457467]
