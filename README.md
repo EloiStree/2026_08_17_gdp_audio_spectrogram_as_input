@@ -16,3 +16,13 @@ Inspiration:
 
 Audio Natively:  
 - https://github.com/EloiStree/2022_04_29_csharp_listen_to_mixer_for_volume
+
+
+
+
+
+----------
+
+Note: Found that amazing video   
+[<img width="501" height="903" alt="image" src="https://github.com/user-attachments/assets/a697ddc6-0a24-4ba1-8d6e-a85a58d155eb" />](https://www.facebook.com/reel/1037486288826746)   
+https://www.facebook.com/reel/1037486288826746    
